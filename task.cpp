@@ -294,7 +294,7 @@ public:
 	//для дерева B предписан симметричный обход. Он используетсся при поиске узла по ключу при прямом обходе A
 
 	void symmetricSearch(Node* node, int key, bool &flag) {
-		if (node != NULL and node->isVirtual == false) {
+		if (node != NULL and node->isVirtual == false and flag == false) {
 			symmetricSearch(getLkid(node), key, flag);
 			if (node->key == key) flag = true;
 			symmetricSearch(getRkid(node), key, flag);
